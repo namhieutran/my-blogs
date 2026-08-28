@@ -26,7 +26,7 @@ gh repo clone namhieutran/my-blogs [local_folder]                       # Clone 
 git status
 
 # Commit updates
-# https://www.conventionalcommits.org/en/v1.0.0/
+# Conventional commit message format: https://www.conventionalcommits.org/en/v1.0.0/
 git add .
 git commit -m "feat: add new feature"
 git push
