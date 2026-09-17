@@ -12,13 +12,15 @@ timezone: Etc/GMT-7
 
 # Build Settings
 markdown: kramdown
-theme: jekyll-theme-minima                # Use remote_theme if using a custom GitHub theme
+theme: minima                             # Use remote_theme if using a custom GitHub theme
+# theme: jekyll-theme-minima
 # theme: jekyll-theme-chirpy
 # theme: jekyll-theme-architect
 # theme: jekyll-theme-hacker
 # theme: jekyll-theme-slate
-# theme: minima
 # remote_theme: "jekyll/minima"
+
+show_excerpts: true                       # set to false to remove excerpts on the homepage
 
 # Plugins (Only use GitHub Pages supported plugins)
 plugins:
