@@ -1,0 +1,146 @@
+# Site Settings
+title: "My Personal Blog"                 # main title
+tagline: Blog                             # subtitle
+description: "My personal blog posts."    # used by seo meta and the atom feed
+domain: namhieutran.github.io             # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: "https://namhieutran.github.io"      # The base hostname and protocol for your site, e.g. http://example.com
+baseurl:
+  "/my-blogs"                             # Set to "" if your repo is named yourusername.github.io
+                                          # place folder name if the site is served in a subfolder
+lang: en
+timezone: Etc/GMT-7
+
+# Build Settings
+markdown: kramdown
+theme: jekyll-theme-minima                # Use remote_theme if using a custom GitHub theme
+# theme: jekyll-theme-chirpy
+# theme: jekyll-theme-architect
+# theme: jekyll-theme-hacker
+# theme: jekyll-theme-slate
+# theme: minima
+# remote_theme: "jekyll/minima"
+
+# Plugins (Only use GitHub Pages supported plugins)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  # - jekyll-remote-theme
+
+# Exclude list (files you don't want rendered into your final site)
+exclude:
+  # - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - docs/
+  - tools/
+  - "*.gem"
+  - "*.gemspec"
+  - "*.config.js"
+  - "package*.json"
+  - purgecss.js
+
+# `jekyll-seo-tag` settings -> https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+author:
+  name: Nam Hieu Tran
+  url: https://namhieutran.github.io    # helps Google to disambiguate the correct author of articles
+github:
+  username: namhieutran
+#twitter:
+#  username: namhieutran
+social:
+  name: Nam Hieu Tran                   # displayed as the default author of the posts and the copyright owner in the footer
+  # email: example@domain.com
+  links:
+    - https://namhieutran.github.io
+
+# `jekyll-seo-tag` settings -> End
+
+# Web Analytics Settings
+analytics:
+  google:
+    # id:
+
+# chirpy Theme Settings
+theme_mode:
+  dark                                  # color scheme setting. [light | dark]
+                                        # note: empty will follow the system prefer color by default,
+                                        # and there will be a toggle to switch the theme between dark
+                                        # and light on the bottom left of the sidebar.
+# avatar: /assets/img                     # avatar on sidebar (supports local or CORS resources)
+toc: false                              # global switch for TOC in posts (boolean)
+comments:                               # global switch for the post-comment system
+  provider: disqus
+  disqus:
+    shortname: namhieutran
+assets:                                 # self-hosted static assets (optional) -> https://github.com/cotes2020/chirpy-static-assets
+  self_host:
+    enabled: false                      # boolean, empty means false
+    env:                                # specify the Jekyll environment, empty means both. [development | production]
+                                        # only works if `assets.self_host.enabled` is 'true'
+paginate: 15                            # number of posts per page
+
+# chirpy Theme Settings -> End
+
+# kramdown build Settings -> Should not modify
+# kramdown:
+#   footnote_backlink: "&#8617;&#xfe0e;"
+#   syntax_highlighter: rouge
+#   syntax_highlighter_opts:              # Rouge Options › https://github.com/jneen/rouge#full-options
+#     css_class: highlight
+#     # default_lang: console
+#     span:
+#       line_numbers: false
+#     block:
+#       line_numbers: true
+#       start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""                          # An empty string here means all files in the project
+      type: posts
+    values:
+      layout: post
+      comments: false                   # Enable comments in posts.
+      toc: false                        # Display TOC column in posts.
+      # permalink: /posts/:title/         # DO NOT modify the following parameter unless you are confident enough
+                                        # to update the code of all other post links in this project.
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs                        # see `site.collections`
+    values:
+      layout: page
+      # permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
