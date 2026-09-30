@@ -1,7 +1,8 @@
 # --- Site Settings ---
 title: "My Personal Blog"                 # main title
 tagline: Blog                             # subtitle
-description: "My personal blog posts."    # used by seo meta and the atom feed
+description: >                            # used by seo meta and the atom feed. `>` ignores the new line
+  My personal blog posts.
 domain: namhieutran.github.io             # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: "https://namhieutran.github.io"      # The base hostname and protocol for your site, e.g. http://example.com
 baseurl: "/my-blogs"                      # Set to "" if your repo is named yourusername.github.io
@@ -20,13 +21,14 @@ theme: minima                             # Use remote_theme if using a custom G
 
 # --- Post Settings ---
 show_excerpts: false                      # Set to true to show post previews on the home page
+# permalink: /:categories/:title            # Don't show the date of the post in the URL
 
 # --- Plugins ---
 # Only use GitHub Pages supported plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-sitemap                        # Automatiacally generate a sitemap.xml
   # - jekyll-remote-theme                   # is required when use remote_theme
 
 # --- Author Details ---
@@ -35,6 +37,11 @@ author: Nam Hieu Tran                       # Minima 2.x: site.author . Displaye
   # email: "hieunam.tran@gmail.com"           # Minima 3.x: site.author.email
   # url: https://namhieutran.github.io      # helps Google to disambiguate the correct author of articles
 email: hieunam.tran@gmail.com
+
+# --- Social Links ---
+twitter_username:
+github_username: namhieutran
+linkedin_username: namhieutran
 
 # --- Build Settings ---
 # Use default settings
@@ -53,9 +60,10 @@ email: hieunam.tran@gmail.com
 #       start_line: 1
 
 # --- Web Analytics Settings ---
-analytics:
-  google:
-    # id:
+# google_analytics:
+# analytics:
+#   google:
+#     id:
 
 # --- Exclude list ---
 # files you don't want rendered into your final site
@@ -132,16 +140,18 @@ collections:
     output: true
     sort_by: order
 
+# --- Default Variables ---
+# Default valúes for any missing variable in pages
 defaults:
   - scope:
       path: ""                          # An empty string here means all files in the project
+      # path: _posts                      # Any file in the `_posts` directory
       type: posts
     values:
       layout: post
       comments: false                   # Enable comments in posts.
       toc: false                        # Display TOC column in posts.
-      # permalink: /posts/:title/         # DO NOT modify the following parameter unless you are confident enough
-                                        # to update the code of all other post links in this project.
+      # permalink: /posts/:title/         # DO NOT modify the unless you are confident enough to update the code of all other post links in this project.
   - scope:
       path: _drafts
     values:
