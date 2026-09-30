@@ -1,35 +1,64 @@
-# Site Settings
+# --- Site Settings ---
 title: "My Personal Blog"                 # main title
 tagline: Blog                             # subtitle
 description: "My personal blog posts."    # used by seo meta and the atom feed
 domain: namhieutran.github.io             # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: "https://namhieutran.github.io"      # The base hostname and protocol for your site, e.g. http://example.com
-baseurl:
-  "/my-blogs"                             # Set to "" if your repo is named yourusername.github.io
+baseurl: "/my-blogs"                      # Set to "" if your repo is named yourusername.github.io
                                           # place folder name if the site is served in a subfolder
 lang: en
 timezone: Etc/GMT-7
 
-# Build Settings
-markdown: kramdown
+# --- Theme Configuration ---
 theme: minima                             # Use remote_theme if using a custom GitHub theme
+# remote_theme: jekyll/minima
+# theme: chirpy
+# theme: architect
+# theme: hacker
+# theme: slate
 # theme: jekyll-theme-minima
-# theme: jekyll-theme-chirpy
-# theme: jekyll-theme-architect
-# theme: jekyll-theme-hacker
-# theme: jekyll-theme-slate
-# remote_theme: "jekyll/minima"
 
-show_excerpts: true                       # set to false to remove excerpts on the homepage
+# --- Post Settings ---
+show_excerpts: false                      # Set to true to show post previews on the home page
 
-# Plugins (Only use GitHub Pages supported plugins)
+# --- Plugins ---
+# Only use GitHub Pages supported plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  # - jekyll-remote-theme
+  # - jekyll-remote-theme                   # is required when use remote_theme
 
-# Exclude list (files you don't want rendered into your final site)
+# --- Author Details ---
+author: Nam Hieu Tran                       # Minima 2.x: site.author . Displayed as the default author of the posts and the copyright owner in the footer
+  # name: Nam Hieu Tran                       # Minima 3.x: site.author.name
+  # email: "hieunam.tran@gmail.com"           # Minima 3.x: site.author.email
+  # url: https://namhieutran.github.io      # helps Google to disambiguate the correct author of articles
+email: hieunam.tran@gmail.com
+
+# --- Build Settings ---
+# Use default settings
+# markdown: kramdown
+# # kramdown build Settings -> Should not modify
+# kramdown:
+#   footnote_backlink: "&#8617;&#xfe0e;"
+#   syntax_highlighter: rouge
+#   syntax_highlighter_opts:                # Rouge Options › https://github.com/jneen/rouge#full-options
+#     css_class: highlight
+#     default_lang: console
+#     span:
+#       line_numbers: false
+#     block:
+#       line_numbers: true
+#       start_line: 1
+
+# --- Web Analytics Settings ---
+analytics:
+  google:
+    # id:
+
+# --- Exclude list ---
+# files you don't want rendered into your final site
 exclude:
   # - README.md
   - LICENSE
@@ -45,26 +74,36 @@ exclude:
   - "package*.json"
   - purgecss.js
 
-# `jekyll-seo-tag` settings -> https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-author:
-  name: Nam Hieu Tran
-  url: https://namhieutran.github.io    # helps Google to disambiguate the correct author of articles
+# --- jekyll-seo-tag Settings ---
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 github:
   username: namhieutran
-#twitter:
-#  username: namhieutran
+twitter:
+  username: namhieutran
 social:
-  name: Nam Hieu Tran                   # displayed as the default author of the posts and the copyright owner in the footer
+  name: Nam Hieu Tran
   # email: example@domain.com
   links:
     - https://namhieutran.github.io
 
-# `jekyll-seo-tag` settings -> End
-
-# Web Analytics Settings
-analytics:
-  google:
-    # id:
+# --- Minima Specific Settings ---
+minima:
+  skin: auto                              # classic (default), dark, auto, solarized, solarized-light, solarized-dark
+  # date_format: "%b %b %d, %Y"             # Format for dates on posts
+  # nav_pages:                              # Custom navigation links
+  #   - about.md
+  #   - portfolio.md
+  social_links:                           # Social Media Links (Shows up in the footer)
+    # twitter:
+    # github: namhieutran
+    # devto:
+    # dribbble:
+    # facebook:
+    # flickr:
+    # instagram:
+    # linkedin: namhieutran
+    # pinterest:
+    # youtube: hieunam.tran
 
 # chirpy Theme Settings
 theme_mode:
@@ -87,18 +126,6 @@ paginate: 15                            # number of posts per page
 
 # chirpy Theme Settings -> End
 
-# kramdown build Settings -> Should not modify
-# kramdown:
-#   footnote_backlink: "&#8617;&#xfe0e;"
-#   syntax_highlighter: rouge
-#   syntax_highlighter_opts:              # Rouge Options › https://github.com/jneen/rouge#full-options
-#     css_class: highlight
-#     # default_lang: console
-#     span:
-#       line_numbers: false
-#     block:
-#       line_numbers: true
-#       start_line: 1
 
 collections:
   tabs:
